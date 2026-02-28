@@ -5,69 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu sistema</title>
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="index.css">
 
-    
-    <style>
-      body {
-        background-color: #3fbba3;
-      }
-      .container_login {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 80px auto;
-        width: 40%;
-        height: 500px;
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-      }
-      h1 {
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        color: #3fbba3;
-      }
-      .input {
-        height: 54px;
-        width: 100%;
-        margin-top: 25px;
-        box-sizing: border-box;
-        padding-left: 10px;
-      }
-      .botao_login {
-        width: 100px;
-        height: 40px;
-        border-radius: 8px;
-        color: #fff;
-        margin-top: 10px;
-        background-color: #0b847a;
-        border: none;
-        cursor: pointer;
-      }
-      .botao_login:hover {
-        background-color: #095852;
-        cursor: pointer;
-      }
-      a {
-        text-decoration: none;
-      }
-      .container_checkbox {
-        align-self: flex-start;
-      }
-      .input_container {
-        margin: 0 auto;
-        width: 100%;
-        font-size: 10px;
-        color: tomato;
-      }
-      #cadastro {
-        font-size: 10px;
-        margin-top: 20px;
-      }
-    </style>
+
+    <!-- estilos da pagina-->
+  
   </head>
   <body>
-    <div class="container_login">
+    
+    <form id="form_login" class="container_login">
       <h1>Login</h1>
       <div class="input_container">
         <input
@@ -77,6 +23,7 @@
           placeholder="Email"
           class="input"
           onclick="verificarCaracteres()"
+          required
         />
         <p id="erro_email"></p>
       </div>
@@ -87,19 +34,20 @@
           id="password"
           placeholder="Senha"
           class="input"
+          required
         />
         <p id="erro_senha"></p>
       </div>
 
       <div class="container_checkbox">
-        <input type="checkbox" id="exibir_senha" />
-        <label for="exibir_senha">Exibir senha</label>
+        <input type="checkbox" id="exibir_senha" onclick="desbloquearSenha()" />
+        <label for="exibir_senha" >Exibir senha</label>
       </div>
 
-      <button class="botao_login" onclick="realizarLogin()">SIGN IN</button>
+      <button class="botao_login" type="submit">SIGN IN</button>
 
       <p id="cadastro">Ainda não tem uma conta? <a href="#rFF">Crie agora!</a></p>
-    </div>
+    </form>
     <script src="index.js"></script>
   </body>
 </html>

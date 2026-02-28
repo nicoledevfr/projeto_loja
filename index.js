@@ -1,17 +1,20 @@
-function realizarLogin() {
+function realizarLogin(event) {
+  event.preventDefault();
+
   var email = document.getElementById("email").value;
   var senha = document.getElementById("password").value;
 
   if (!email || !senha) {
     document.getElementById("email").style.borderColor = "red";
-    document.getElementById("erro_email").innerText = "Voce deve preencher o campo de email";
+    document.getElementById("erro_email").innerText =
+      "Voce deve preencher o campo de email";
 
     document.getElementById("password").style.borderColor = "red";
-    document.getElementById("erro_senha").innerText = "Voce deve preencher o campo de senha";
+    document.getElementById("erro_senha").innerText =
+      "Voce deve preencher o campo de senha";
     return;
-    
-  } 
-  
+  }
+
   if (email === "senai@gmail.com" && senha === "senai") {
     window.location.href = "./pages/home/home.html";
   } else {
@@ -21,7 +24,7 @@ function realizarLogin() {
 
 function desbloquearSenha() {
   var tipo_atual = document.getElementById("password").type;
-  
+
   if (tipo_atual === "text") {
     document.getElementById("password").type = "password";
   } else {
@@ -29,3 +32,4 @@ function desbloquearSenha() {
   }
 }
 
+document.getElementById("form_login").addEventListener("submit", realizarLogin);
